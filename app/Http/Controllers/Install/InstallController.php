@@ -194,13 +194,13 @@ class InstallController extends Controller
             }
 
             //pos boot
-            $return = pos_boot($input['APP_URL'], __DIR__, $input['ENVATO_PURCHASE_CODE'], $input['ENVATO_EMAIL'], $input['ENVATO_USERNAME']);
+            /*$return = pos_boot($input['APP_URL'], __DIR__, $input['ENVATO_PURCHASE_CODE'], $input['ENVATO_EMAIL'], $input['ENVATO_USERNAME']);
             if (!empty($return)) {
                 return $return;
-            }
+            }*/
 
             //Check for activation key
-            if ($this->macActivationKeyChecker) {
+           /* if ($this->macActivationKeyChecker) {
                 $licence_code = $request->get('MAC_LICENCE_CODE');
                 $licence_valid = mac_verify_licence_code($licence_code);
                 if ($licence_valid) {
@@ -211,7 +211,7 @@ class InstallController extends Controller
                 }
 
                 $input['MAC_LICENCE_CODE'] = $licence_code;
-            }
+            }*/
 
             //Get .env file details and write the contents in it.
             $envPathExample = base_path('.env.example');
@@ -321,11 +321,11 @@ class InstallController extends Controller
             ini_set('max_execution_time', 0);
             ini_set('memory_limit', '512M');
 
-            $input = $request->only(['ENVATO_PURCHASE_CODE', 'ENVATO_USERNAME', 'ENVATO_EMAIL']);
-            $return = pos_boot(config('app.url'), __DIR__, $input['ENVATO_PURCHASE_CODE'], $input['ENVATO_EMAIL'], $input['ENVATO_USERNAME'], 1);
-            if (!empty($return)) {
+            //$input = $request->only(['ENVATO_PURCHASE_CODE', 'ENVATO_USERNAME', 'ENVATO_EMAIL']);
+            //$return = pos_boot(config('app.url'), __DIR__, $input['ENVATO_PURCHASE_CODE'], $input['ENVATO_EMAIL'], $input['ENVATO_USERNAME'], 1);
+            /*if (!empty($return)) {
                 return $return;
-            }
+            }*/
 
             //Static version value is passed for 1.2 version.
             if ($version == 1.2) {
