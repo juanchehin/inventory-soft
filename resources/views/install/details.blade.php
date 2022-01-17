@@ -141,7 +141,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                         <label for="MAIL_FROM_ADDRESS">Default from address:*</label>
-                        <input type="email" class="form-control" id="MAIL_FROM_ADDRESS" name="MAIL_FROM_ADDRESS" placeholder="hello@ultimatepos.com" required>
+                        <input type="email" class="form-control" id="MAIL_FROM_ADDRESS" name="MAIL_FROM_ADDRESS" placeholder="hello@example.com" required>
                     </div>
                   </div>
 

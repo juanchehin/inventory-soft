@@ -1,104 +1,57 @@
 <!doctype html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Inventory Soft</title>
 
-        <title>{{ config('app.name', 'ultimatePOS') }}</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,600" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-                background-color: #ffffff;
-                background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.12'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            }
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
 
-            .full-height {
-                height: 100vh;
-            }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Inventory Soft</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link active" aria-current="page" href="#">Login</a>
+        <a class="nav-link" href="#">Register</a>
+      </nav>
+    </div>
+  </header>
 
-            .position-ref {
-                position: relative;
-            }
+  <main class="px-3">
+    <img src="{{asset('img/logo-sin-fondo.png')}}">
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+    <h1>Inventory Soft</h1>
+  </main>
 
-            .content {
-                text-align: center;
-            }
+  <footer class="mt-auto text-white-50">
+    <p>Ing. Chehin Juan Martin, por <a href="https://juanchehin.github.io/slider/" class="text-white">Slider Tucuman</a>.</p>
+  </footer>
+</div>
 
-            .title {
-                font-size: 84px;
-            }
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-
-            .tagline{
-                font-size:25px;
-                font-weight: 300;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            <div class="top-right links">
-
-                @if (Route::has('login'))
-                    @if (Auth::check())
-                        <a href="{{ action('HomeController@index') }}">@lang('home.home')</a>
-                    @else
-                        <a href="{{ action('Auth\LoginController@login') }}">@lang('lang_v1.login')</a>
-                        @if(env('ALLOW_REGISTRATION', true))
-                            <a href="{{ route('business.getRegister') }}">@lang('lang_v1.register')</a>
-                        @endif
-                    @endif
-                @endif
-
-                @if(Route::has('pricing') && config('app.env') != 'demo')
-                    <a href="{{ action('\Modules\Superadmin\Http\Controllers\PricingController@index') }}">@lang('superadmin::lang.pricing')</a>
-                @endif
-            </div>
-
-            <div class="content">
-                <div class="title m-b-md" style="font-weight: 600 !important">
-                    {{ config('app.name', 'ultimatePOS') }}
-                </div>
-                <p class="tagline">
-                    {{ env('APP_TITLE', '') }}
-                </p>
-            </div>
-        </div>
-    </body>
+    
+  </body>
 </html>

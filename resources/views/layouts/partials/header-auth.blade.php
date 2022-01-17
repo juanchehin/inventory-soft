@@ -51,7 +51,8 @@
 				<img src="/uploads/logo.png" class="img-rounded" alt="Logo" width="150" style="margin-bottom: 30px;">
 			</div>
 		@else
-	    	<h1 class="text-center page-header">{{ config('app.name', 'ultimatePOS') }}</h1>
+	    	{{--  <h1 class="text-center page-header">{{ config('app.name', 'InventorySoft') }}</h1>  --}}
+			<h1 class="text-center page-header">InventorySoft</h1> 
 	    @endif
 	</div>
 </div>
