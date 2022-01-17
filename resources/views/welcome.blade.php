@@ -34,8 +34,24 @@
     <div>
       <h3 class="float-md-start mb-0">Inventory Soft</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link active" aria-current="page" href="#">Login</a>
-        <a class="nav-link" href="#">Register</a>
+        <a class="nav-link active" aria-current="page" href="#">
+            @if (Route::has('login'))
+                    @if (Auth::check())
+                        <a href="{{ action('HomeController@index') }}">@lang('home.home')</a>
+                    @else
+                        <a class="nav-link" href="{{ action('Auth\LoginController@login') }}">@lang('lang_v1.login')</a>
+                        @if(env('ALLOW_REGISTRATION', true))
+                            <a class="nav-link" href="{{ route('business.getRegister') }}">@lang('lang_v1.register')</a>
+                        @endif
+                    @endif
+                
+        </a>
+        @endif
+
+        @if(Route::has('pricing') && config('app.env') != 'demo')
+            <a href="{{ action('\Modules\Superadmin\Http\Controllers\PricingController@index') }}">@lang('superadmin::lang.pricing')</a>
+        @endif
+        
       </nav>
     </div>
   </header>
